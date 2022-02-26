@@ -1,0 +1,25 @@
+rootProject.name = 'FakerAndroid'
+include 'bin'
+include 'bin:FakerAndroid-gui'
+include 'bin:FakerAndroid-cli'
+include 'bin:FakerAndroid-AS'
+include 'library'
+include 'controller'
+include 'distribution:runtime-base'
+include 'distribution:runtime-il2cpp'
+include 'distribution:master'
+include 'distribution:resources'
+include 'distribution:smali'
+include 'distribution:il2cpp-dumper'
+include 'distribution:dex2jar'
+include 'distribution:il2cpp'
+include 'distribution:project'
+include 'distribution:apktool'
+include 'distribution:apktool:brut.apktool:apktool-lib'
+include 'distribution:apktool:brut.j.common'
+include 'distribution:apktool:brut.j.util'
+include 'distribution:apktool:brut.j.dir'
+
+
+
+

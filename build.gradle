@@ -1,0 +1,55 @@
+group 'faker.android'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    dependencies {
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        compileOnly 'org.jetbrains:annotations:20.1.0'
+        compileOnly "org.projectlombok:lombok:1.18.4"
+        testImplementation 'ch.qos.logback:logback-classic:1.2.3'
+        testImplementation 'org.hamcrest:hamcrest-library:2.2'
+        testImplementation 'org.mockito:mockito-core:3.5.10'
+        testImplementation 'org.assertj:assertj-core:3.17.2'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+        testImplementation 'org.eclipse.jdt.core.compiler:ecj:4.6.1'
+        testCompileOnly 'org.jetbrains:annotations:20.1.0'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        google()
+    }
+}
+buildscript {
+    ext.kotlin_version = '1.4.32'
+    repositories {
+        jcenter()
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+apply plugin: 'kotlin'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

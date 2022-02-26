@@ -1,0 +1,21 @@
+dependencies {
+    implementation project(':controller')
+    implementation 'com.luhuiguo:chinese-utils:1.0'
+    implementation(project(':library'))
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+    }
+}
+apply plugin: 'com.github.johnrengelman.shadow'
+jar {
+    manifest {
+        attributes 'Main-Class' : 'FakerAndroidGui'
+    }
+}

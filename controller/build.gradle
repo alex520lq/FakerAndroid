@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+group 'faker.android'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.luhuiguo:chinese-utils:1.0'
+    implementation 'org.dom4j:dom4j:2.1.1'
+    implementation 'commons-io:commons-io:2.4'
+    implementation(project(':library'))
+    implementation(project(':distribution:il2cpp-dumper'))
+    implementation(project(':distribution:smali'))
+    implementation(project(':distribution:dex2jar'))
+    implementation(project(':distribution:runtime-base'))
+    implementation(project(':distribution:runtime-il2cpp'))
+    implementation(project(':distribution:project'))
+    implementation project(':distribution:apktool:brut.apktool:apktool-lib')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

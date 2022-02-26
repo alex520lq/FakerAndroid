@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>com.fakerandroid.as.plugin</id>
+  <name>FakerAndroid</name>
+  <version>patched</version>
+  <vendor email="fakerandrolid@gmail.com" url="https://github.com/Efaker/FakerAndroid">Efaker</vendor>
+  <description><![CDATA[
+     Base FakerAndroid intellij plugin for androidStudio
+      ]]></description>
+  <change-notes><![CDATA[
+      ]]>
+  </change-notes>
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="191"/> <!-- IDEA 2019.1 -->
+  <depends>com.intellij.modules.java</depends>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <action id="generateSmaliCode" class="org.ollide.java2smali.GenerateAction" text="Compile to Smali"
+              description="Creates and shows a smali version of this file">
+          <add-to-group group-id="BuildMenu" anchor="after" relative-to-action="Compile"/>
+    </action>
+    <!-- file  -->
+    <action id="fakerandroid-file" class="com.fakerandroid.as.OpenApkFileAction" text="FakerAndroid"
+            description="Creates and shows a smali version of this file">
+      <add-to-group group-id="FileOpenGroup" anchor="before" relative-to-action="OpenFile"/>
+    </action>
+    <!-- welcome  -->
+    <action id="fakerandroid-welcome" class="com.fakerandroid.as.OpenApkFileAction" text="FakerAndroid"
+            description="Creates and shows a smali version of this file" icon="AllIcons.General.ShowInfos">
+      <add-to-group group-id="WelcomeScreen.QuickStart" anchor="last"/>
+    </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileEditorProvider implementation="com.fakerandroid.as.editor.DatEditorProvider"/>
+    <fileType name="dat"
+              implementationClass="com.fakerandroid.as.editor.DatFileType"
+              fieldName="INSTANCE"
+              extensions="dat" />
+  </extensions>
+
+</idea-plugin>

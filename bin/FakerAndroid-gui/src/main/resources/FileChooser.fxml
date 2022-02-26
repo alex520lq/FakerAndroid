@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="690.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FilechooserController">
+  <children>
+    <VBox fx:id="vbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" spacing="16.0" onDragOver="#onDragOverApk" onDragDropped="#onDragDroppedApk">
+      <children>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="10.0">
+          <children>
+            <Label focusTraversable="false" text="Apk Path" prefWidth="60"></Label>
+            <TextField id="apkPathTextField" focusTraversable="false" fx:id="apkPathTextField" prefWidth="480" promptText="Drag or select a Apk file"></TextField>
+            <Button id="btn" fx:id="btn01" mnemonicParsing="false" onAction="#btn01OnAction" text="Select Apk File" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="10.0">
+          <children>
+            <Label focusTraversable="false" text="Out Dir" prefWidth="60"></Label>
+            <TextField id="projectPathTextField" focusTraversable="false" fx:id="projectPathTextField" prefWidth="480" promptText="Select a out dir"></TextField>
+            <Button id="btn" fx:id="btn02" mnemonicParsing="false" onAction="#btn02OnAction" text="Select Out Dir " />
+          </children>
+        </HBox>
+        <TextArea fx:id="txa" editable="false" focusTraversable="false" prefHeight="300.0"  prefWidth="660.0" style="-fx-background-color: beige;" wrapText="true" />
+        <HBox id="HBox" alignment="BASELINE_RIGHT" spacing="20.0" >
+          <children>
+            <Button  id="btn" fx:id="btn03" layoutY="130" mnemonicParsing="false" prefHeight="32" prefWidth="120" onAction="#btn03OnAction" text="Generate Project"/>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

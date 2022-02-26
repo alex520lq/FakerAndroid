@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+group 'faker.android'
+version '1.0-SNAPSHOT'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(':library'))
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
